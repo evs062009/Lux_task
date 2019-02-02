@@ -1,1 +1,1 @@
-# Lux_task
+# Luxoft Java courses homework
