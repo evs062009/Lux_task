@@ -31,11 +31,4 @@ public class SelectionSort {
         }
         return newArr;
     }
-
-//    private static void print(int [] ints) {
-//        for (int i: ints
-//             ) {
-//            System.out.print(i + ", ");
-//        }
-//    }
 }
