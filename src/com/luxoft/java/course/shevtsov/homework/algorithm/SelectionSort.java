@@ -4,17 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
 
-    public static void main(String[] args) {
-        int [] ints = {5, 7, 1, 3, 2, 0};
-
-        System.out.print("original array:\t");
-        System.out.println(Arrays.toString(ints));
-        int [] sortedArr = sort(ints);
-        System.out.print("sorted array:\t");
-        System.out.println(Arrays.toString(sortedArr));
-    }
-
-    private static int [] sort(int [] ints) {
+    public static int [] sort(int [] ints) {
         int [] newArr = Arrays.copyOf(ints, ints.length);
         for (int i = 0; i < newArr.length - 1; i++) {
             int min = newArr[i];
