@@ -1,14 +1,15 @@
+import java.util.Arrays;
+
 public class SelectionSort {
 
     public static void main(String[] args) {
         int [] ints = {5, 7, 1, 3, 2, 0};
 
         System.out.print("original array:\t");
-        print(ints);
-        System.out.println();
+        System.out.println(Arrays.toString(ints));
         sort(ints);
         System.out.print("sorted array:\t");
-        print(ints);
+        System.out.println(Arrays.toString(ints));
     }
 
     private static void sort(int [] ints) {
@@ -29,10 +30,10 @@ public class SelectionSort {
         }
     }
 
-    private static void print(int [] ints) {
-        for (int i: ints
-             ) {
-            System.out.print(i + ", ");
-        }
-    }
+//    private static void print(int [] ints) {
+//        for (int i: ints
+//             ) {
+//            System.out.print(i + ", ");
+//        }
+//    }
 }
