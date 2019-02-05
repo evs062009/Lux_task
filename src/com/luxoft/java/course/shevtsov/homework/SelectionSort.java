@@ -1,3 +1,5 @@
+package com.luxoft.java.course.shevtsov.homework;
+
 import java.util.Arrays;
 
 public class SelectionSort {
