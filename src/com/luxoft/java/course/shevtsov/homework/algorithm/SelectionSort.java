@@ -1,4 +1,4 @@
-package com.luxoft.java.course.shevtsov.homework;
+package com.luxoft.java.course.shevtsov.homework.algorithm;
 
 import java.util.Arrays;
 
