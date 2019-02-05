@@ -7,27 +7,29 @@ public class SelectionSort {
 
         System.out.print("original array:\t");
         System.out.println(Arrays.toString(ints));
-        sort(ints);
+        int [] sortedArr = sort(ints);
         System.out.print("sorted array:\t");
-        System.out.println(Arrays.toString(ints));
+        System.out.println(Arrays.toString(sortedArr));
     }
 
-    private static void sort(int [] ints) {
-        for (int i = 0; i < ints.length - 1; i++) {
-            int min = ints[i];
+    private static int [] sort(int [] ints) {
+        int [] newArr = Arrays.copyOf(ints, ints.length);
+        for (int i = 0; i < newArr.length - 1; i++) {
+            int min = newArr[i];
             int minIndex = i;
-            for (int j = i + 1; j < ints.length; j++) {
-                if (ints[j] < min) {
-                    min = ints[j];
+            for (int j = i + 1; j < newArr.length; j++) {
+                if (newArr[j] < min) {
+                    min = newArr[j];
                     minIndex = j;
                 }
             }
             if (minIndex != i) {
-                int temp = ints[minIndex];
-                ints[minIndex] = ints[i];
-                ints[i] = temp;
+                int temp = newArr[minIndex];
+                newArr[minIndex] = newArr[i];
+                newArr[i] = temp;
             }
         }
+        return newArr;
     }
 
 //    private static void print(int [] ints) {
