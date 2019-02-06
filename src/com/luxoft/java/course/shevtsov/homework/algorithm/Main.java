@@ -10,10 +10,9 @@ public class Main {
         System.out.print("original array:\t");
         System.out.println(Arrays.toString(ints));
 
-        MergeSort.sort(ints);
+        int [] sortedInts = MergeSort.sort(ints);
 
-//        int [] sortedArr = SelectionSort.sort(ints);
-//        System.out.print("sorted array:\t");
-//        System.out.println(Arrays.toString(sortedArr));
+        System.out.print("sorted array:\t");
+        System.out.println(Arrays.toString(sortedInts));
     }
 }
