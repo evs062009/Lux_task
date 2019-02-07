@@ -15,7 +15,7 @@ public class Main {
 
             if (resultIndex == -1) {
                 System.out.println("There is NO such element.");
-            } else if (resultIndex != -2){
+            } else {
                 System.out.println("index of '" + searchNumber + "' element is " + resultIndex);
             }
         }

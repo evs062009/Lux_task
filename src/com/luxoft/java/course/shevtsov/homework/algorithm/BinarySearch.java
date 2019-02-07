@@ -8,7 +8,7 @@ public class BinarySearch {
     which can be used for searching int number in sorted array of ints.
 
     search(…) method takes an array of ints sorted by ascending, and int number as parameters.
-    If array is empty or not sorted by ascending, the method issues a message and returns -2.
+    If array is empty or not sorted by ascending, the method issues a message and returns -1.
 
     search(…) method returns an index of array element which (element) equals to the searched number.
     If there are several elements satisfying the condition, the method returns an index
@@ -19,7 +19,7 @@ public class BinarySearch {
     public static int search(int[] ints, int searchNumber) {
         if (ints.length == 0 || !MyUtilities.isArrSotredByAsc(ints)) {
             System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
-            return -2;
+            return -1;
         } else {
             int from = 0;
             int to = ints.length - 1;
