@@ -17,7 +17,7 @@ public class BinarySearch {
      */
 
     public static Integer search(int[] ints, int searchNumber) {
-        if (ints.length > 0 && !MyUtilities.ifArrSotredByAsc(ints)) {
+        if (ints.length == 0 || !MyUtilities.isArrSotredByAsc(ints)) {
             System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
             return null;
         }
@@ -37,7 +37,7 @@ public class BinarySearch {
                 if (ints[baseIndex] == searchNumber) {
                     resultIndex = baseIndex;
                 } else if (ints[baseIndex] > searchNumber) {
-                    resultIndex =  binarySearch(ints, from, baseIndex - 1, searchNumber);
+                    resultIndex = binarySearch(ints, from, baseIndex - 1, searchNumber);
                 } else {
                     resultIndex = binarySearch(ints, baseIndex + 1, to, searchNumber);
                 }

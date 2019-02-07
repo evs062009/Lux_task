@@ -19,7 +19,7 @@ public class MyUtilities {
         }
     }
 
-    public static boolean ifArrSotredByAsc(int[] ints) {
+    public static boolean isArrSotredByAsc(int[] ints) {
         for (int arrIndex = 0; arrIndex < ints.length - 1; arrIndex++) {
             if (ints[arrIndex] > ints[arrIndex + 1]) {
                 return false;
