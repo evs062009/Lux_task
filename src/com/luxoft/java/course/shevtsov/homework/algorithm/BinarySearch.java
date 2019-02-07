@@ -3,6 +3,18 @@ package com.luxoft.java.course.shevtsov.homework.algorithm;
 import com.luxoft.java.course.shevtsov.homework.myUtilities.MyUtilities;
 
 public class BinarySearch {
+    /*
+    Class BinarySearch includes search(…)method,
+    which can be used for searching int number in sorted array of ints.
+
+    search(…) method takes an array of ints sorted by ascending, and int number as parameters.
+    If array is empty or not sorted by ascending, the method issues a message and returns null.
+
+    search(…) method returns an index of array element which (element) equals to the searched number.
+    If there are several elements satisfying the condition, the method returns an index
+    of the first one found during algorithm execution.
+    If there is no such element in array, the method returns null.
+     */
 
     public static Integer search(int[] ints, int searchNumber) {
         if (ints.length > 0 && !MyUtilities.ifArrSotredByAsc(ints)) {

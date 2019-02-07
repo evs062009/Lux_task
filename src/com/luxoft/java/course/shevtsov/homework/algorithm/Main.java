@@ -19,7 +19,5 @@ public class Main {
                 System.out.println("index of '" + i + "' element is " + resultIndex);
             }
         }
-
-        //написать реадми
     }
 }
