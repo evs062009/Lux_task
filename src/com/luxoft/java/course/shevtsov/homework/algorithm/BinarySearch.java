@@ -6,8 +6,8 @@ public class BinarySearch {
     private static Integer resultIndex = null;
 
     public static Integer search(int[] ints, int searchNumber) {
-        if (!MyUtilities.ifArrSotredByAsc(ints)) {
-            System.out.println("Invalid parameters. The Array isn`t sorted by ascending.");
+        if (ints.length > 0 && !MyUtilities.ifArrSotredByAsc(ints)) {
+            System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
             return null;
         }
         binarySearch(ints, 0, ints.length - 1, searchNumber);

@@ -15,5 +15,7 @@ public class Main {
         if (resultIndex != null) {
             System.out.println("index of '" + searchNumber + "' element is " +resultIndex);
         }
+
+        //написать реадми
     }
 }
