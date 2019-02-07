@@ -8,41 +8,41 @@ public class BinarySearch {
     which can be used for searching int number in sorted array of ints.
 
     search(…) method takes an array of ints sorted by ascending, and int number as parameters.
-    If array is empty or not sorted by ascending, the method issues a message and returns null.
+    If array is empty or not sorted by ascending, the method issues a message and returns -2.
 
     search(…) method returns an index of array element which (element) equals to the searched number.
     If there are several elements satisfying the condition, the method returns an index
     of the first one found during algorithm execution.
-    If there is no such element in array, the method returns null.
+    If there is no such element in array, the method returns -1.
      */
 
-    public static Integer search(int[] ints, int searchNumber) {
+    public static int search(int[] ints, int searchNumber) {
         if (ints.length == 0 || !MyUtilities.isArrSotredByAsc(ints)) {
             System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
-            return null;
-        }
-        return binarySearch(ints, 0, ints.length - 1, searchNumber);
-    }
+            return -2;
+        } else {
+            int from = 0;
+            int to = ints.length - 1;
 
-    private static Integer binarySearch(int[] ints, int from, int to, int searchNumber) {
-        Integer resultIndex = null;
-
-        if (searchNumber >= ints[from] && searchNumber <= ints[to]) {
-            if (from == to) {
-                if (ints[from] == searchNumber) {
-                    resultIndex = from;
-                }
-            } else {
-                int baseIndex = from + ((to - from) / 2);
-                if (ints[baseIndex] == searchNumber) {
-                    resultIndex = baseIndex;
-                } else if (ints[baseIndex] > searchNumber) {
-                    resultIndex = binarySearch(ints, from, baseIndex - 1, searchNumber);
+            while (from != to){
+                if (searchNumber >= ints[from] && searchNumber <= ints[to]) {
+                    int baseIndex = from + ((to - from) / 2);
+                    if (ints[baseIndex] == searchNumber) {
+                        return baseIndex;
+                    } else if (ints[baseIndex] > searchNumber) {
+                        to = baseIndex - 1;
+                    } else {
+                        from = baseIndex + 1;
+                    }
                 } else {
-                    resultIndex = binarySearch(ints, baseIndex + 1, to, searchNumber);
+                    return -1;
                 }
             }
+            if (ints[from] == searchNumber) {
+                return from;
+            } else {
+                return -1;
+            }
         }
-        return resultIndex;
     }
 }
