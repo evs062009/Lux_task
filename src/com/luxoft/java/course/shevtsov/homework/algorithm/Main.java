@@ -2,17 +2,18 @@ package com.luxoft.java.course.shevtsov.homework.algorithm;
 
 import com.luxoft.java.course.shevtsov.homework.myUtilities.MyUtilities;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-//        int [] ints = {5, 7, 1, 3, 2, 0};
-//
-//        System.out.print("original array:\t");
-//        System.out.println(Arrays.toString(ints));
-//        int [] sortedArr = SelectionSort.sort(ints);
-//        System.out.print("sorted array:\t");
-//        System.out.println(Arrays.toString(sortedArr));
+        int [] ints = {-10, -8, -4, 0, 1, 5, 6, 9, 12, 20};
 
-        System.out.println(MyUtilities.inputInt());
+        System.out.println("Array for searching:\t" + Arrays.toString(ints));
+        int searchNumber = MyUtilities.inputInt();
+        Integer resultIndex = BinarySearch.search(ints, searchNumber);
+        if (resultIndex != null) {
+            System.out.println("index of '" + searchNumber + "' element is " +resultIndex);
+        }
     }
 }
