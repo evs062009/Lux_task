@@ -5,12 +5,19 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int [] ints = {5, 7, 1, 3, 2, 0};
+        int[] ints = {-10, -8, -4, 0, 1, 5, 6, 9, 12, 20};
+        System.out.println("Array for searching:\t" + Arrays.toString(ints));
 
-        System.out.print("original array:\t");
-        System.out.println(Arrays.toString(ints));
-        int [] sortedArr = SelectionSort.sort(ints);
-        System.out.print("sorted array:\t");
-        System.out.println(Arrays.toString(sortedArr));
+        for (int searchNumber = -11; searchNumber <= 21; searchNumber++) {
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println("search for " + searchNumber);
+            int resultIndex = BinarySearch.search(ints, searchNumber);
+
+            if (resultIndex == -1) {
+                System.out.println("There is NO such element.");
+            } else {
+                System.out.println("index of '" + searchNumber + "' element is " + resultIndex);
+            }
+        }
     }
 }
