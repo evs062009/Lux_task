@@ -6,7 +6,7 @@ import com.luxoft.java.course.shevtsov.homework.myUtilities.MyUtilities;
 public class Main {
 
     public static void main(String[] args) {
-        int number = 0;
+        int number;
         while (true) {
             System.out.print("Input int number (should not exceed " + NumberSymmetryCheck.NUMBER_LENGTH
                     + " characters). ");
