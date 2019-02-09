@@ -1,12 +1,10 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm.additionals;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 
 public class QuickSort {
-
-    //
-//    private static int n = 0;
-    //
 
     public static int[] sort(int[] ints) {
         int[] ints1 = Arrays.copyOf(ints, ints.length);
@@ -14,99 +12,38 @@ public class QuickSort {
         return ints1;
     }
 
-    private static void recursSort(int[] ints, int firstIndex, int pivot) {
-
-        //
-//        System.out.println("--------------------------------------------------------------");
-//        System.out.println("stage " + (++n));
-//        System.out.println("firstIndex - " + firstIndex);
-//        System.out.println("pivot - " + pivot);
-//        System.out.print("input arr");
-//        printArr(ints, firstIndex, pivot);
-        //
-
-        if (firstIndex >= 0 && pivot < ints.length && firstIndex < pivot) {
+    private static void recursSort(int[] ints, int firstIndex, int lastIndex) {
+        if (firstIndex >= 0 && lastIndex < ints.length && firstIndex < lastIndex) {
+            int pivotIndex = lastIndex;
             int wallIndex = firstIndex;
 
-            while (wallIndex < pivot && ints[wallIndex] <= ints[pivot]) {
+            while (wallIndex < lastIndex && ints[wallIndex] <= ints[pivotIndex]) {
                 wallIndex++;
-
-                //
-//                System.out.println("shift wall element to " + ints[wallIndex]);
-                //
-
             }
 
-            //
-//            System.out.println("wall element: " + ints[wallIndex]);
-            //
-
-            for (int currentIndex = wallIndex; currentIndex < pivot; currentIndex++) {
-
-                //
-//                System.out.print("current element: " + ints[currentIndex]);
-                //
-
-                if (ints[currentIndex] <= ints[pivot]) {
-
-                    //
-//                    System.out.println(" <= pivot " + ints[pivot] + ", " + ints[currentIndex] + " <=> " + ints[wallIndex]);
-                    //
-
-                    int temp = ints[currentIndex];
-                    ints[currentIndex] = ints[wallIndex];
-                    ints[wallIndex] = temp;
+            for (int currentIndex = wallIndex; currentIndex < lastIndex; currentIndex++) {
+                if (ints[currentIndex] <= ints[pivotIndex]) {
+                    swap(ints, currentIndex, wallIndex);
                     wallIndex++;
-
-                    //
-//                    System.out.println("wall element " + ints[wallIndex]);
-//                    System.out.print("arr after wall <=> current: ");
-//                    printArr(ints, firstIndex, pivot);
-                    //
-
                 }
-
-                //
-//                else {
-//                    System.out.println(" skip");
-//                }
-                //
-
             }
-
-            //
-//            System.out.print("pivot " + ints[pivot] + " =>  wall" + ints[wallIndex] + ": ");
-            //
-
-            int pivotElement = ints[pivot];
-            for (int i = pivot; i > wallIndex; i--) {
-                ints[i] = ints[i - 1];
-            }
-            ints[wallIndex] = pivotElement;
-
-            //
-//            printArr(ints, firstIndex, pivot);
-//            System.out.print("whole arr: ");
-//            printArr(ints, 0, ints.length - 1);
-            //
-
+            setPivotToPosition(ints, pivotIndex, wallIndex);
             recursSort(ints, firstIndex, wallIndex - 1);
-            recursSort(ints, wallIndex + 1, pivot);
+            recursSort(ints, wallIndex + 1, pivotIndex);
         }
-
-        //
-//        System.out.print("output arr");
-//        printArr(ints, firstIndex, pivot);
-        //
     }
 
-    //!!! for testing, delete
-//    private static void printArr(int[] ints, int from, int to) {
-//        System.out.print("[");
-//        for (int i = from; i <= to; i++) {
-//            System.out.print(ints[i] + ", ");
-//        }
-//        System.out.println("]");
-//    }
-    //
+    private static void swap(@NotNull int [] ints, int index1, int index2){
+        int temp = ints[index1];
+        ints[index1] = ints[index2];
+        ints[index2] = temp;
+    }
+
+    private static void setPivotToPosition(@NotNull int [] ints, int pivotIndex, int wallIndex){
+        int pivotElement = ints[pivotIndex];
+        for (int index = pivotIndex; index > wallIndex; index--) {
+            ints[index] = ints[index - 1];
+        }
+        ints[wallIndex] = pivotElement;
+    }
 }
