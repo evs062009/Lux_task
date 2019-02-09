@@ -8,12 +8,11 @@ public class MyUtilities {
     public static int inputInt() {
 
         while (true) {
-            System.out.print("Input integer number: ");
             String input = sc.nextLine();
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException numFormEx) {
-                System.out.println("Invalid input. Please repeat.");
+                System.out.print("Invalid input. Please repeat: ");
             }
         }
     }
