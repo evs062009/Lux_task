@@ -6,10 +6,10 @@ public class NumberSymmetryCheck {
     private static int number1 = 0;
 
     public static boolean checkNumberSymmetry(int number){
-        String strNumber = "" + number;
+        number1 = Math.abs(number);
+        String strNumber = "" + number1;
 
         if (strNumber.length() <= NUMBER_LENGTH){
-            number1 = number;
             int sumRightHalf = countSumOfHalfCharacters();
             int sumLeftHalf = countSumOfHalfCharacters();
             return sumRightHalf == sumLeftHalf;
