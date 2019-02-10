@@ -8,8 +8,6 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-//        int number = MyUtilities.inputInt();
-//        System.out.println(NumberSymmetryCheck.checkNumberSymmetry(number));
         ArrayList<Integer> numbers = MyUtilities.inputIntegers();
         numbers.forEach(number -> System.out.println("for " + number + " - "
                 + NumberSymmetryCheck.checkNumberSymmetry(number)));
