@@ -40,23 +40,12 @@ public class QuickSort {
     }
 
     static int setPivotToPosition(@NotNull int [] ints, int pivotIndex, int wallIndex){
-
-        //
-//        System.out.println("arr at start satPivot" + Arrays.toString(ints));
-//        System.out.println("pivotIndex = " + pivotIndex);
-//        System.out.println("wallIndex = " + wallIndex);
-        //
-
         int pivotElement = ints[pivotIndex];
+
         for (int index = pivotIndex; index > wallIndex; index--) {
             ints[index] = ints[index - 1];
         }
         ints[wallIndex] = pivotElement;
-
-        //
-//        System.out.println("arr at finish satPivot" + Arrays.toString(ints));
-        //
-
         return wallIndex;
     }
 }

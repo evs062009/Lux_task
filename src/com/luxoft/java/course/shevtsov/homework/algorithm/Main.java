@@ -1,6 +1,5 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
-import com.luxoft.java.course.shevtsov.homework.algorithm.additionals.QuickSort;
 import com.luxoft.java.course.shevtsov.homework.algorithm.additionals.QuickSort_NoRecursoin;
 
 import java.util.Arrays;
