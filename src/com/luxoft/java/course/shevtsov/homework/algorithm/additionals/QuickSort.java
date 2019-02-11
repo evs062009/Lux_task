@@ -33,17 +33,30 @@ public class QuickSort {
         }
     }
 
-    private static void swap(@NotNull int [] ints, int index1, int index2){
+    static void swap(@NotNull int [] ints, int index1, int index2){
         int temp = ints[index1];
         ints[index1] = ints[index2];
         ints[index2] = temp;
     }
 
-    private static void setPivotToPosition(@NotNull int [] ints, int pivotIndex, int wallIndex){
+    static int setPivotToPosition(@NotNull int [] ints, int pivotIndex, int wallIndex){
+
+        //
+//        System.out.println("arr at start satPivot" + Arrays.toString(ints));
+//        System.out.println("pivotIndex = " + pivotIndex);
+//        System.out.println("wallIndex = " + wallIndex);
+        //
+
         int pivotElement = ints[pivotIndex];
         for (int index = pivotIndex; index > wallIndex; index--) {
             ints[index] = ints[index - 1];
         }
         ints[wallIndex] = pivotElement;
+
+        //
+//        System.out.println("arr at finish satPivot" + Arrays.toString(ints));
+        //
+
+        return wallIndex;
     }
 }
