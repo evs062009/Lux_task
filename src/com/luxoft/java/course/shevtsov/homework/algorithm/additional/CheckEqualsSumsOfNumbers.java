@@ -1,18 +1,18 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm.additional;
 
 public class CheckEqualsSumsOfNumbers {
+    public static final int NUMBER_HALF_LENGTH = 2;
+    public static final int NUMBER_LENGTH = NUMBER_HALF_LENGTH * 2;
 
     public static boolean checkEqualsSumsOfNumbers(int number) {
-        int number_half_length = 2;
-        int number_length = number_half_length * 2;
         int number1 = Math.abs(number);
 
         if (number1 <= 9999) {
-            int sumRightHalf = countSumOfCharacters(number1, number_half_length, number_length);
-            int sumLeftHalf = countSumOfCharacters(number1, 0, number_half_length);
+            int sumRightHalf = countSumOfCharacters(number1, NUMBER_HALF_LENGTH, NUMBER_LENGTH);
+            int sumLeftHalf = countSumOfCharacters(number1, 0, NUMBER_HALF_LENGTH);
             return sumRightHalf == sumLeftHalf;
         } else {
-            System.out.println("Invalid parameter! Number length should not exceed " + number_length + " characters");
+            System.out.println("Invalid parameter! Number length should not exceed " + NUMBER_LENGTH + " characters");
             return false;
         }
     }
