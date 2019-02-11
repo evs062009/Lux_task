@@ -3,7 +3,7 @@ package com.luxoft.java.course.shevtsov.homework.algorithm.additionals;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class QuickSort_NoRecursoin {
+public class QuickSortNoRecursoin {
 
     public static int[] sort(int[] ints) {
         int[] ints1 = Arrays.copyOf(ints, ints.length);
