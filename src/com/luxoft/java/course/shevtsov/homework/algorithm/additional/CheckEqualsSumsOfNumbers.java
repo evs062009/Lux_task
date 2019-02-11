@@ -1,8 +1,8 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm.additional;
 
-public class NumberSymmetryCheck {
+public class CheckEqualsSumsOfNumbers {
 
-    public static boolean checkNumberSymmetry(int number) {
+    public static boolean checkEqualsSumsOfNumbers(int number) {
         int number_half_length = 2;
         int number_length = number_half_length * 2;
         int number1 = Math.abs(number);
