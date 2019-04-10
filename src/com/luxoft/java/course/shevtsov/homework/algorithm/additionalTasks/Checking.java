@@ -1,4 +1,4 @@
-package com.luxoft.java.course.shevtsov.homework.algorithm.additional;
+package com.luxoft.java.course.shevtsov.homework.algorithm.additionalTasks;
 
 import com.luxoft.java.course.shevtsov.homework.algorithm.AlgoUtilities;
 

@@ -46,7 +46,7 @@ public class AlgoUtilities {
         return true;
     }
 
-    static void swap(List<Integer> integers, int firstElement, int secondElement) {
+    public static void swap(List<Integer> integers, int firstElement, int secondElement) {
         Integer temp = integers.get(secondElement);
         integers.set(secondElement, integers.get(firstElement));
         integers.set(firstElement, temp);

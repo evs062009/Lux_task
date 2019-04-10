@@ -1,4 +1,4 @@
-package com.luxoft.java.course.shevtsov.homework.algorithm.additional;
+package com.luxoft.java.course.shevtsov.homework.algorithm.additionalTasks;
 
 class CheckEqualsSumsOfNumbers {
     private static final int NUMBER_HALF_LENGTH = 2;
