@@ -6,9 +6,10 @@ public class BubbleSort {
 
     public static int [] sort(int [] ints) {
         int [] numbers = Arrays.copyOf(ints, ints.length);
-        boolean noSwap = true;
+        boolean noSwap;
 
         for (int iterCount = numbers.length - 1; iterCount > 0; iterCount--) {
+            noSwap = true;
             for (int arrIndex = 0; arrIndex < iterCount; arrIndex++) {
                 if (numbers[arrIndex] > numbers[arrIndex + 1]){
                     int temp = numbers[arrIndex];
