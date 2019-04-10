@@ -7,10 +7,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-class AlgoUtilities {
+public class AlgoUtilities {
     private static Scanner sc = new Scanner(System.in);
 
-    static List<Integer> inputIntegers() {
+    public static List<Integer> inputIntegers() {
         List<Integer> integers = new ArrayList<>();
 
         System.out.println("Input integer numbers. For complete input 'exit': ");

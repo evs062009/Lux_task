@@ -1,16 +1,10 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm.additional;
 
-/*
- * additional task
- * Luxoft Java course
- */
-public class CheckEqualsSumsOfNumbers {
+class CheckEqualsSumsOfNumbers {
     private static final int NUMBER_HALF_LENGTH = 2;
     private static final int NUMBER_LENGTH = NUMBER_HALF_LENGTH * 2;
 
-    // Returns true if sum of first two digits of a number is equal to sum of last two digits.
-    // If a number has less than four digits, it is assumed that the missing digits are 0.
-    public static boolean checkEqualsSumsOfNumbers(int number) {
+    static boolean checkEqualsSumsOfNumbers(int number) {
         int number1 = Math.abs(number);
 
         if (number1 <= 9999) {

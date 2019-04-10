@@ -6,12 +6,13 @@ import java.util.List;
 class MergeSort {
 
     static List<Integer> sort(List<Integer> integers) {
-        if (integers.size() > 1) {
-            List<Integer> integers1 = new ArrayList<>(integers.subList(0, integers.size() / 2));
-            List<Integer> integers2 = new ArrayList<>(integers.subList(integers1.size(), integers.size()));
+        List<Integer> list = new ArrayList<>(integers);
+        if (list.size() > 1) {
+            List<Integer> integers1 = new ArrayList<>(list.subList(0, list.size() / 2));
+            List<Integer> integers2 = new ArrayList<>(list.subList(integers1.size(), list.size()));
             return getSortedArr(integers1, integers2);
         }
-        return integers;
+        return list;
     }
 
     private static List<Integer> getSortedArr(List<Integer> integers1, List<Integer> integers2) {
