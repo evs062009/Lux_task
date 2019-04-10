@@ -1,26 +1,16 @@
-package com.luxoft.java.course.shevtsov.homework.myUtilities;
+package com.luxoft.java.course.shevtsov.homework.algorithm;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
-public class MyUtilities {
+class AlgoUtilities {
     private static Scanner sc = new Scanner(System.in);
 
-    public static int inputInt() {
-        while (true) {
-            if (sc.hasNextInt()){
-                return sc.nextInt();
-            } else {
-                System.out.print("Invalid input. Please repeat: ");
-            }
-        }
-    }
-
-    public static ArrayList<Integer> inputIntegers() {
-        ArrayList<Integer> integers = new ArrayList<Integer>();
+    static ArrayList<Integer> inputIntegers() {
+        ArrayList<Integer> integers = new ArrayList<>();
 
         System.out.println("Input integer numbers. For complete input 'exit': ");
         while (true) {
@@ -37,12 +27,18 @@ public class MyUtilities {
         return integers;
     }
 
-    public static boolean isArrSotredByAsc(@NotNull int[] ints) {
+    static boolean isArrSotredByAsc(@NotNull int[] ints) {
         for (int arrIndex = 0; arrIndex < ints.length - 1; arrIndex++) {
             if (ints[arrIndex] > ints[arrIndex + 1]) {
                 return false;
             }
         }
         return true;
+    }
+
+    static void swap(List<Integer> integers, int firstElement, int secondElement) {
+        Integer temp = integers.get(secondElement);
+        integers.set(secondElement, integers.get(firstElement));
+        integers.set(firstElement, temp);
     }
 }

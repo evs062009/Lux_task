@@ -1,7 +1,5 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
-import com.luxoft.java.course.shevtsov.homework.myUtilities.MyUtilities;
-
 public class BinarySearch {
     /*
     Class BinarySearch includes search(…)method,
@@ -17,7 +15,7 @@ public class BinarySearch {
      */
 
     public static int search(int[] ints, int searchNumber) {
-        if (ints.length == 0 || !MyUtilities.isArrSotredByAsc(ints)) {
+        if (ints.length == 0 || !AlgoUtilities.isArrSotredByAsc(ints)) {
             System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
             return -1;
         } else {
