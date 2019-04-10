@@ -1,20 +1,22 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-public class InsertionSort {
+class InsertionSort {
 
-    public static int [] sort(int [] ints) {
-        int [] numbers = Arrays.copyOf(ints, ints.length);
+    static List<Integer> sort(List<Integer> integers) {
+        List<Integer> list = new ArrayList<>(integers);
+        Integer element;
 
-        for (int iterCount = 1; iterCount < numbers.length; iterCount++) {
-            int element = numbers[iterCount];
+        for (int iterCount = 1; iterCount < list.size(); iterCount++) {
+            element = list.get(iterCount);
             int arrIndex = iterCount;
-            for ( ; (arrIndex > 0) && (numbers[arrIndex - 1] > element); arrIndex--) {
-                numbers[arrIndex] = numbers[arrIndex - 1];
+            for ( ; (arrIndex > 0) && (list.get(arrIndex - 1) > element); arrIndex--) {
+                list.set(arrIndex, list.get(arrIndex - 1));
             }
-            numbers[arrIndex] = element;
+            list.set(arrIndex, element);
         }
-        return numbers;
+        return list;
     }
 }
