@@ -33,12 +33,7 @@ public class QuickSort {
                     wallIndex++;
                 }
             }
-
-            Integer pivotElement = integers.get(lastIndex);
-            for (int index = lastIndex; index > wallIndex; index--) {
-                integers.set(index, integers.get(index - 1));
-            }
-            integers.set(wallIndex, pivotElement);
+            AlgoUtilities.swap(integers, wallIndex, lastIndex);
             return wallIndex;
         } else {
             return -1;
