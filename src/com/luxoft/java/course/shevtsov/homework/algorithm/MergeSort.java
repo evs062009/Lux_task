@@ -1,49 +1,44 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MergeSort {
+class MergeSort {
 
-    public static int[] sort(int[] ints) {
-        if (ints.length > 1) {
-            int[] ints1 = Arrays.copyOfRange(ints, 0, ints.length / 2);
-            int[] ints2 = Arrays.copyOfRange(ints, ints1.length, ints.length);
-            return getSortedArr(ints1, ints2);
+    static List<Integer> sort(List<Integer> integers) {
+        if (integers.size() > 1) {
+            List<Integer> integers1 = new ArrayList<>(integers.subList(0, integers.size() / 2));
+            List<Integer> integers2 = new ArrayList<>(integers.subList(integers1.size(), integers.size()));
+            return getSortedArr(integers1, integers2);
         }
-        return ints;
+        return integers;
     }
 
-    private static int[] getSortedArr(int[] ints1, int[] ints2) {
-        int[] result = new int[ints1.length + ints2.length];
-        ints1 = sort(ints1);
-        ints2 = sort(ints2);
+    private static List<Integer> getSortedArr(List<Integer> integers1, List<Integer> integers2) {
+        List<Integer> result = new ArrayList<>(integers1.size() + integers2.size());
+        integers1 = sort(integers1);
+        integers2 = sort(integers2);
+        int ints1Index = 0;
+        int ints2Index = 0;
 
-        for (int resultIndex = 0, ints1Index = 0, ints2Index = 0; resultIndex < result.length; resultIndex++) {
-            if (ints1Index == ints1.length) {
-                fillRest(result, resultIndex, ints2, ints2Index);
+        while (result.size() < integers1.size() + integers2.size()) {
+            if (ints1Index == integers1.size()) {
+                result.addAll(integers2.subList(ints2Index, integers2.size()));
                 break;
             }
-            if (ints2Index == ints2.length) {
-                fillRest(result, resultIndex, ints1, ints1Index);
+            if (ints2Index == integers2.size()) {
+                result.addAll(integers1.subList(ints1Index, integers1.size()));
                 break;
             }
 
-            if (ints1[ints1Index] < ints2[ints2Index]) {
-                result[resultIndex] = ints1[ints1Index];
+            if (integers1.get(ints1Index) < integers2.get(ints2Index)) {
+                result.add(integers1.get(ints1Index));
                 ints1Index++;
             } else {
-                result[resultIndex] = ints2[ints2Index];
+                result.add(integers2.get(ints2Index));
                 ints2Index++;
             }
         }
         return result;
-    }
-
-    private static void fillRest(int[] destInts, int destFrom, int[] sourceInts, int sourceFrom) {
-        int destIndex = destFrom;
-        int sourceIndex = sourceFrom;
-        for (; destIndex < destInts.length; destIndex++, sourceIndex++) {
-            destInts[destIndex] = sourceInts[sourceIndex];
-        }
     }
 }
