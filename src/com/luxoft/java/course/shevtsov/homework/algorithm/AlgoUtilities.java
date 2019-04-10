@@ -3,14 +3,15 @@ package com.luxoft.java.course.shevtsov.homework.algorithm;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 class AlgoUtilities {
     private static Scanner sc = new Scanner(System.in);
 
-    static ArrayList<Integer> inputIntegers() {
-        ArrayList<Integer> integers = new ArrayList<>();
+    static List<Integer> inputIntegers() {
+        List<Integer> integers = new ArrayList<>();
 
         System.out.println("Input integer numbers. For complete input 'exit': ");
         while (true) {
@@ -25,6 +26,15 @@ class AlgoUtilities {
             }
         }
         return integers;
+    }
+
+    static List<Integer> fillIntegers(int size) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            list.add(i);
+        }
+        Collections.shuffle(list);
+        return list;
     }
 
     static boolean isArrSotredByAsc(@NotNull int[] ints) {
