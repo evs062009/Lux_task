@@ -1,7 +1,5 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,9 +35,9 @@ public class AlgoUtilities {
         return list;
     }
 
-    static boolean isArrSotredByAsc(@NotNull int[] ints) {
-        for (int arrIndex = 0; arrIndex < ints.length - 1; arrIndex++) {
-            if (ints[arrIndex] > ints[arrIndex + 1]) {
+    static boolean isArrSotredByAsc(List<Integer> integers) {
+        for (int arrIndex = 0; arrIndex < integers.size() - 1; arrIndex++) {
+            if (integers.get(arrIndex) > integers.get(arrIndex + 1)) {
                 return false;
             }
         }

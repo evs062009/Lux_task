@@ -1,5 +1,7 @@
 package com.luxoft.java.course.shevtsov.homework.algorithm;
 
+import java.util.List;
+
 public class BinarySearch {
     /*
     Class BinarySearch includes search(…)method,
@@ -14,30 +16,30 @@ public class BinarySearch {
     If there is no such element in array, the method returns -1.
      */
 
-    public static int search(int[] ints, int searchNumber) {
-        if (ints.length == 0 || !AlgoUtilities.isArrSotredByAsc(ints)) {
+    public static int search(List<Integer> integers, Integer searchingValue) {
+        if (integers.size() == 0 || !AlgoUtilities.isArrSotredByAsc(integers)) {
             System.out.println("Invalid parameters. The Array is empty or not sorted by ascending.");
             return -1;
         } else {
-            int from = 0;
-            int to = ints.length - 1;
+            int fromIndex = 0;
+            int toIndex = integers.size() - 1;
 
-            while (from != to){
-                if (searchNumber >= ints[from] && searchNumber <= ints[to]) {
-                    int baseIndex = from + ((to - from) / 2);
-                    if (ints[baseIndex] == searchNumber) {
+            while (fromIndex != toIndex){
+                if (searchingValue >= integers.get(fromIndex) && searchingValue <= integers.get(toIndex)) {
+                    int baseIndex = fromIndex + ((toIndex - fromIndex) / 2);
+                    if (integers.get(baseIndex).equals(searchingValue)) {
                         return baseIndex;
-                    } else if (ints[baseIndex] > searchNumber) {
-                        to = baseIndex - 1;
+                    } else if (integers.get(baseIndex) > searchingValue) {
+                        toIndex = baseIndex - 1;
                     } else {
-                        from = baseIndex + 1;
+                        fromIndex = baseIndex + 1;
                     }
                 } else {
                     return -1;
                 }
             }
-            if (ints[from] == searchNumber) {
-                return from;
+            if (integers.get(fromIndex).equals(searchingValue)) {
+                return fromIndex;
             } else {
                 return -1;
             }

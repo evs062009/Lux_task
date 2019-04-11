@@ -10,7 +10,6 @@ public class QuickSortNoRecursoin {
         ArrayList<int[]> pairsOfCoordinates = new ArrayList<>();
 
         addPairCoordinates(pairsOfCoordinates, 0, list.size() - 1);
-
         for (int pairNumber = 0; pairNumber < pairsOfCoordinates.size(); pairNumber++) {
             int[] currentCoordinates = pairsOfCoordinates.get(pairNumber);
             int pivotIndex = QuickSort.sortIteration(list, currentCoordinates[0], currentCoordinates[1]);

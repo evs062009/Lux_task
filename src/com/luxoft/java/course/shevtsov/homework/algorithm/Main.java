@@ -14,6 +14,10 @@ public class Main {
     public static void main(String[] args) {
         List<Integer> numbers = AlgoUtilities.fillIntegers(7);
         System.out.println("original list " + numbers);
-        System.out.println("sorted list " + QuickSortNoRecursoin.sort(numbers));
+        numbers = QuickSortNoRecursoin.sort(numbers);
+        System.out.println("sorted list " + numbers);
+
+        Integer searchingEl = 4;
+        System.out.println("searchingIndex = " + BinarySearch.search(numbers, searchingEl));
     }
 }
