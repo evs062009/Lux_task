@@ -12,12 +12,13 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> numbers = AlgoUtilities.fillIntegers(7);
+        List<Integer> numbers = AlgoUtilities.fillIntegers(1);
         System.out.println("original list " + numbers);
         numbers = QuickSortNoRecursoin.sort(numbers);
         System.out.println("sorted list " + numbers);
 
-        Integer searchingEl = 4;
-        System.out.println("searchingIndex = " + BinarySearch.search(numbers, searchingEl));
+        Integer searchedEl = 0;
+        System.out.println("searched element = " + searchedEl + "," +
+                "element Index = " + BinarySearch.search(numbers, searchedEl));
     }
 }
